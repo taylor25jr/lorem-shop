@@ -65,6 +65,24 @@ let total = 0;
 const selectProduct = [];
 const cantidad = [];
 
+
+
+const listaArti = (a) => {
+    const listCant = document.querySelector('#quantity');
+    const listItems = document.querySelector('#elements');
+    
+
+    
+        const keys = Object.keys(items);
+
+    if(!listItems.innerHTML.includes(keys[a])){
+       listItems.innerHTML += keys[a] + '<br>';}
+
+    
+}
+
+
+/*
 //funcion productos en carrito
 
 const listaArticulos = (a) => {
@@ -85,16 +103,26 @@ const listaArticulos = (a) => {
 
 const listaCantidad = (a) => {
 
+
     const listCant = document.querySelector('#quantity');
-    listCant.innerHTML = '';
+     listCant.innerHTML = '';
+    
+
+    
+      
+            
+    
+
+   
 
     for (const key in items) {
-        const cantidadProducto = items[key];
-
-        if (cantidadProducto > 0) {
-            listCant.innerHTML += items[key] + '<br>';
-        }
-    }
+    const cantidadProducto = items[key];
+    
+   if (cantidadProducto > 0) {
+     
+          listCant.innerHTML += items[key] + '<br>'
+       }
+ }
 }
 
 
@@ -106,7 +134,7 @@ const listaPrice = (a) => {
     if (!listPrice.innerHTML.includes(parseInt(precios[a]))) {
         listPrice.innerHTML += parseInt(precios[a]) + '<br>';
     }
-}
+}*/
 
 
 //eventos
@@ -115,9 +143,10 @@ buyHeadphones.addEventListener('click', () => {
     total += parseInt(headphonesprice);
     mostrarTotal.innerHTML = total + 'USD';
     items.headphones++;
-    listaArticulos(0);
-    listaCantidad(0);
-    listaPrice(0);
+    listaArti(0)
+    // listaArticulos(0);
+    // listaCantidad(0);
+    // listaPrice(0);
 
 })
 
@@ -126,9 +155,11 @@ buyControl.addEventListener('click', () => {
     total += parseInt(controlPrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.control++;
-    listaArticulos(1);
-    listaCantidad(1);
-    listaPrice(1);
+    listaArti(1)
+
+    // listaArticulos(1);
+    // listaCantidad(1);
+    // listaPrice(1);
 
 
 })
@@ -138,10 +169,11 @@ buyIphone.addEventListener('click', () => {
     total += parseInt(iphonePrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.iphone++;
+    listaArti(2)
 
-    listaArticulos(2);
-    listaCantidad(2);
-    listaPrice(2);
+    // listaArticulos(2);
+    // listaCantidad(2);
+    // listaPrice(2);
 
 
 
@@ -151,9 +183,11 @@ buyAirdrop.addEventListener('click', () => {
     total += parseInt(airdropPrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.airdrop++;
-    listaArticulos(3);
-    listaCantidad(3);
-    listaPrice(3);
+    listaArti(3)
+
+    // listaArticulos(3);
+    // listaCantidad();
+    // listaPrice(3);
 
 })
 
@@ -161,9 +195,9 @@ buyGalaxy.addEventListener('click', () => {
     total += parseInt(galaxyPrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.galaxy++;
-    listaArticulos(4);
-    listaCantidad(4);
-    listaPrice(4);
+    // listaArticulos(4);
+    // listaCantidad();
+    // listaPrice(4);
 
 })
 
@@ -171,9 +205,9 @@ buyXbox.addEventListener('click', () => {
     total += parseInt(xboxPrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.xbox++;
-    listaArticulos(5);
-    listaCantidad(5);
-    listaPrice(5);
+    // listaArticulos(5);
+    // listaCantidad();
+    // listaPrice(5);
 
 })
 
@@ -181,9 +215,9 @@ buyIpad.addEventListener('click', () => {
     total += parseInt(ipadPrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.ipad++;
-    listaArticulos(6);
-    listaCantidad(6);
-    listaPrice(6);
+    // listaArticulos(6);
+    // listaCantidad();
+    // listaPrice(6);
 
 })
 
@@ -191,9 +225,9 @@ buyCard.addEventListener('click', () => {
     total += parseInt(cardPrice);
     mostrarTotal.innerHTML = total + 'USD';
     items.card++;
-    listaArticulos(7);
-    listaCantidad(7);
-    listaPrice(7);
+    // listaArticulos(7);
+    // listaCantidad(7);
+    // listaPrice(7);
 
 })
 
