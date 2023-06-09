@@ -182,7 +182,6 @@ align-content: flex-start;
 align-items: center;
 flex-direction: row;
 width: 100vw;
-height: 164vh;
 }
 .products > h1 {
 margin-bottom: 100px;
@@ -195,7 +194,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 width: calc(100vw - 50%);
-height: 40vh;
 border: 3px solid #fff;
 background: linear-gradient(45deg, black, rgb(9, 75, 190));
 }
@@ -459,7 +457,6 @@ header {
 display: flex;
 flex-flow: row wrap;
 width: 100vw;
-height: 8vh;
 justify-content: flex-start;
 align-items: center;
 position: sticky;
@@ -558,9 +555,9 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: center;
 align-content: center;
-flex-direction: column;
+flex-direction: row;
 width: 100vw;
-height: 120vh;
+
 }
 .products > h1 {
 margin-bottom: 100px;
@@ -571,14 +568,14 @@ text-align: center;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-width: 500px;
-height: 30vh;
+width: 35vw;
 border-radius: 10px;
+margin-left: 30px;
+margin-bottom: 10px;
 }
 
 .img-card > img {
-width: 180px;
-height: 180px;
+width: 10vw;
 }
 
 .card:hover .img-card img {
