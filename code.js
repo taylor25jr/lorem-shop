@@ -35,21 +35,21 @@ const cardPrice = parseFloat(precioCard.textContent.replace('$', ''));
 
 //Array
 
-const precios = [
-    parseFloat(precioAudifono.textContent.replace('$', '')),
-    parseFloat(precioControl.textContent.replace('$', '')),
-    parseFloat(precioIphone.textContent.replace('$', '')),
-    parseFloat(precioAirdrop.textContent.replace('$', '')),
-    parseFloat(precioGalaxy.textContent.replace('$', '')),
-    parseFloat(precioXbox.textContent.replace('$', '')),
-    parseFloat(precioIpad.textContent.replace('$', '')),
-    parseFloat(precioCard.textContent.replace('$', ''))
-];
 
 
-//items
 
-const items = {
+//variables y constantes
+let headphones = 0;
+let control = 0;
+let iphone = 0;
+let airdrop = 0;
+let galaxy = 0;
+let xbox = 0;
+let ipad = 0;
+let card = 0;
+let total = 0;
+
+const quantities = {
     headphones: 0,
     control: 0,
     iphone: 0,
@@ -57,84 +57,21 @@ const items = {
     galaxy: 0,
     xbox: 0,
     ipad: 0,
-    card: 0
-};
-
-//variables y constantes
-let total = 0;
-const selectProduct = [];
-const cantidad = [];
+    card: 0,
+  };
 
 
+const quantityElements = {
+    headphones: document.querySelector('#cantidad-headphones'),
+    control: document.querySelector('#cantidad-control'),
+    iphone: document.querySelector('#cantidad-iphone'),
+    airdrop: document.querySelector('#cantidad-airdrop'),
+    galaxy: document.querySelector('#cantidad-galaxy'),
+    xbox: document.querySelector('#cantidad-xbox'),
+    ipad: document.querySelector('#cantidad-ipad'),
+    card: document.querySelector('#cantidad-card'),
+  };
 
-const listaArti = (a) => {
-    const listCant = document.querySelector('#quantity');
-    const listItems = document.querySelector('#elements');
-    
-
-    
-        const keys = Object.keys(items);
-
-    if(!listItems.innerHTML.includes(keys[a])){
-       listItems.innerHTML += keys[a] + '<br>';}
-
-    
-}
-
-
-/*
-//funcion productos en carrito
-
-const listaArticulos = (a) => {
-    const listItems = document.querySelector('#elements');
-
-    listItems.innerHTML = '';
-    const keys = Object.keys(items);
-
-    if (!listItems.innerHTML.includes(keys[a])) {
-        selectProduct.push(keys[a]);
-        listItems.innerHTML = Array.from(new Set(selectProduct)).join('<br>');
-
-    }
-}
-
-
-//funcion Cantidad de productos en carrito
-
-const listaCantidad = (a) => {
-
-
-    const listCant = document.querySelector('#quantity');
-     listCant.innerHTML = '';
-    
-
-    
-      
-            
-    
-
-   
-
-    for (const key in items) {
-    const cantidadProducto = items[key];
-    
-   if (cantidadProducto > 0) {
-     
-          listCant.innerHTML += items[key] + '<br>'
-       }
- }
-}
-
-
-//funcion precio de productos en carrito
-
-const listaPrice = (a) => {
-    const listPrice = document.querySelector('#price');
-
-    if (!listPrice.innerHTML.includes(parseInt(precios[a]))) {
-        listPrice.innerHTML += parseInt(precios[a]) + '<br>';
-    }
-}*/
 
 
 //eventos
@@ -142,95 +79,218 @@ const listaPrice = (a) => {
 buyHeadphones.addEventListener('click', () => {
     total += parseInt(headphonesprice);
     mostrarTotal.innerHTML = total + 'USD';
-    items.headphones++;
-    listaArti(0)
-    // listaArticulos(0);
-    // listaCantidad(0);
-    // listaPrice(0);
-
-})
-
-
-buyControl.addEventListener('click', () => {
-    total += parseInt(controlPrice);
-    mostrarTotal.innerHTML = total + 'USD';
-    items.control++;
-    listaArti(1)
-
-    // listaArticulos(1);
-    // listaCantidad(1);
-    // listaPrice(1);
+    quantities.headphones++
+    const listCant = document.querySelector('#cantidad');
+    const listItems = document.querySelector('#elements');
+    const listPrice = document.querySelector('#price');
+    
+    quantityElements.headphones.innerHTML = quantities.headphones;
 
 
-})
+    if(!listItems.innerHTML.includes('headphones')){
+        const div = document.createElement('div');
+        div.innerHTML = 'headphones';
+        listItems.appendChild(div)}
+        
+        if (!listPrice.innerHTML.includes(parseInt(headphonesprice))) {
+            const div = document.createElement('div');
+            div.innerHTML = headphonesprice;
+            listPrice.appendChild(div)
+        }
 
-buyIphone.addEventListener('click', () => {
+        
+        
+        
+    })
+    
+    
+    buyControl.addEventListener('click', () => {
+        total += parseInt(controlPrice);
+        mostrarTotal.innerHTML = total + 'USD';
+        quantities.control++
+        const listCant = document.querySelector('#cantidad');
+        const listItems = document.querySelector('#elements');
+        const listPrice = document.querySelector('#price');
+        
+        quantityElements.control.innerHTML = quantities.control;
 
-    total += parseInt(iphonePrice);
-    mostrarTotal.innerHTML = total + 'USD';
-    items.iphone++;
-    listaArti(2)
+        
+    if(!listItems.innerHTML.includes('control')){
+        const div = document.createElement('div');
+        div.innerHTML = 'control';
+        listItems.appendChild(div)}
+        
+        if (!listPrice.innerHTML.includes(parseInt(controlPrice))) {
+            const div = document.createElement('div');
+            div.innerHTML = controlPrice;
+            listPrice.appendChild(div)
+        }
+        
+        
+        
+        
+    })
+    
+    buyIphone.addEventListener('click', () => {
+        
+        total += parseInt(iphonePrice);
+        mostrarTotal.innerHTML = total + 'USD';
+        quantities.iphone++
+        quantityElements.iphone.innerHTML = quantities.iphone;
+        
+        const listCant = document.querySelector('#cantidad');
+        const listItems = document.querySelector('#elements');
+        const listPrice = document.querySelector('#price');
+        
+      
+        
+        
+        
+    if(!listItems.innerHTML.includes('iphone')){
+        const div = document.createElement('div');
+        div.innerHTML = 'iphone';
+        listItems.appendChild(div)}
+        
+        if (!listPrice.innerHTML.includes(parseInt(iphonePrice))) {
+            const div = document.createElement('div');
+            div.innerHTML = iphonePrice;
+            listPrice.appendChild(div)
+        }
+    
+        
+        
+        
+        
+    })
+    
+    buyAirdrop.addEventListener('click', () => {
+        total += parseInt(airdropPrice);
+        mostrarTotal.innerHTML = total + 'USD';
+        
+        airdrop++
+        const listCant = document.querySelector('#cantidad');
+        const listItems = document.querySelector('#elements');
+        const listPrice = document.querySelector('#price');
+        
+    
+    
+    if(!listItems.innerHTML.includes('airdrop')){
+        const div = document.createElement('div');
+        div.innerHTML = 'airdrop';
+    listItems.appendChild(div)}
 
-    // listaArticulos(2);
-    // listaCantidad(2);
-    // listaPrice(2);
-
-
-
-})
-
-buyAirdrop.addEventListener('click', () => {
-    total += parseInt(airdropPrice);
-    mostrarTotal.innerHTML = total + 'USD';
-    items.airdrop++;
-    listaArti(3)
-
-    // listaArticulos(3);
-    // listaCantidad();
-    // listaPrice(3);
-
+    if (!listPrice.innerHTML.includes(parseInt(airdropPrice))) {
+        const div = document.createElement('div');
+        div.innerHTML = airdropPrice;
+        listPrice.appendChild(div)
+    }
+    
 })
 
 buyGalaxy.addEventListener('click', () => {
     total += parseInt(galaxyPrice);
     mostrarTotal.innerHTML = total + 'USD';
-    items.galaxy++;
-    // listaArticulos(4);
-    // listaCantidad();
-    // listaPrice(4);
+
+    galaxy++
+    const listCant = document.querySelector('#cantidad');
+    const listItems = document.querySelector('#elements');
+    const listPrice = document.querySelector('#price');
+
+    listCant.innerHTML = galaxy;
+    
+    if(!listItems.innerHTML.includes('galaxy')){
+        const div = document.createElement('div');
+        div.innerHTML = 'galaxy';
+    listItems.appendChild(div)}
+
+    if (!listPrice.innerHTML.includes(parseInt(galaxyPrice))) {
+        const div = document.createElement('div');
+        div.innerHTML = galaxyPrice;
+        listPrice.appendChild(div)
+    }
+
+    
+   
 
 })
 
 buyXbox.addEventListener('click', () => {
     total += parseInt(xboxPrice);
     mostrarTotal.innerHTML = total + 'USD';
-    items.xbox++;
-    // listaArticulos(5);
-    // listaCantidad();
-    // listaPrice(5);
+
+    xbox++
+    const listCant = document.querySelector('#cantidad');
+    const listItems = document.querySelector('#elements');
+    const listPrice = document.querySelector('#price');
+
+    listCant.innerHTML = xbox;
+    
+    if(!listItems.innerHTML.includes('xbox')){
+        const div = document.createElement('div');
+        div.innerHTML = 'xbox';
+    listItems.appendChild(div)}
+
+    if (!listPrice.innerHTML.includes(parseInt(xboxPrice))) {
+        const div = document.createElement('div');
+        div.innerHTML = xboxPrice;
+        listPrice.appendChild(div)
+    }
 
 })
+
 
 buyIpad.addEventListener('click', () => {
     total += parseInt(ipadPrice);
     mostrarTotal.innerHTML = total + 'USD';
-    items.ipad++;
-    // listaArticulos(6);
-    // listaCantidad();
-    // listaPrice(6);
+
+    ipad++
+    const listCant = document.querySelector('#cantidad');
+    const listItems = document.querySelector('#elements');
+    const listPrice = document.querySelector('#price');
+
+    listCant.innerHTML = ipad;
+    
+    if(!listItems.innerHTML.includes('ipad')){
+        const div = document.createElement('div');
+        div.innerHTML = 'ipad';
+    listItems.appendChild(div)}
+
+    if (!listPrice.innerHTML.includes(parseInt(ipadPrice))) {
+        const div = document.createElement('div');
+        div.innerHTML = ipadPrice;
+        listPrice.appendChild(div)
+    }
+
+    
+    
 
 })
 
 buyCard.addEventListener('click', () => {
     total += parseInt(cardPrice);
     mostrarTotal.innerHTML = total + 'USD';
-    items.card++;
-    // listaArticulos(7);
-    // listaCantidad(7);
-    // listaPrice(7);
+
+    card++
+    const listCant = document.querySelector('#cantidad');
+    const listItems = document.querySelector('#elements');
+    const listPrice = document.querySelector('#price');
+
+    listCant.innerHTML = card;
+    
+    
+    if(!listItems.innerHTML.includes('card')){
+        const div = document.createElement('div');
+        div.innerHTML = 'card';
+    listItems.appendChild(div)}
+
+    if (!listPrice.innerHTML.includes(parseInt(cardPrice))) {
+        const div = document.createElement('div');
+        div.innerHTML = cardPrice;
+        listPrice.appendChild(div);
+    }
+
+    
+  
 
 })
-
-
-//Carrito
 

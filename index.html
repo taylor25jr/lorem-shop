@@ -58,7 +58,7 @@
 
                 <article class="content-card">
                     <dt>Headphones</dt>
-                    <dd class="price-headphones">$49.<small>99</small></dd>
+                    <dd class="price">$49.<small>99</small></dd>
                     <button id="buy-headphones" class="btn buy">Comprar</button>
                 </article>
 
@@ -72,7 +72,7 @@
 
                 <article class="content-card">
                     <dt>Ps5 Joystick</dt>
-                    <dd class="price-joystick">$80.<small>00</small></dd>
+                    <dd class="price">$80.<small>00</small></dd>
                    <button id="buy-control" class="btn buy">Comprar</button>
                 </article>
 
@@ -86,7 +86,7 @@
 
                 <article class="content-card">
                     <dt>iphone 12 pro max</dt>
-                    <dd class="price-iphone">$309.<small>99</small></dd>
+                    <dd class="price">$309.<small>99</small></dd>
                     <button id="buy-iphone" class="btn buy">Comprar</button>
                 </article>
 
@@ -100,7 +100,7 @@
 
                 <article class="content-card">
                     <dt>air drops</dt>
-                    <dd class="price-airdrop">$29.<small>59</small></dd>
+                    <dd class="price">$29.<small>59</small></dd>
                     <button id="buy-airdrop" class="btn buy">Comprar</button>
                 </article>
 
@@ -114,7 +114,7 @@
 
                 <article class="content-card">
                     <dt>galaxy s22 ultra</dt>
-                    <dd class="price-galaxy">$599.<small>99</small></dd>
+                    <dd class="price">$599.<small>99</small></dd>
                     <button id="buy-galaxy" class="btn buy">Comprar</button>
                 </article>
 
@@ -128,7 +128,7 @@
 
                 <article class="content-card">
                     <dt>xbox one</dt>
-                    <dd class="price-xbox">$659.<small>99</small></dd>
+                    <dd class="price">$659.<small>99</small></dd>
                     <button id="buy-xbox" class="btn buy">Comprar</button>
                 </article>
 
@@ -141,7 +141,7 @@
 
                 <article class="content-card">
                     <dt>ipad 10ma generación</dt>
-                    <dd class="price-ipad">$209.<small>49</small></dd>
+                    <dd class="price">$209.<small>49</small></dd>
                     <button id="buy-ipad" class="btn buy">Comprar</button>
                 </article>
 
@@ -154,12 +154,38 @@
 
                 <article class="content-card">
                     <dt>Video card gigabate</dt>
-                    <dd class="price-card">$199.<small>99</small></dd>
+                    <dd class="price">$199.<small>99</small></dd>
+                    <button id="buy-card" class="btn buy">Comprar</button>
+                </article>
+
+            </div>
+            <div class="card">
+
+                <article class="img-card">
+                    <img src="./img/product7.png" alt="">
+                </article>
+
+                <article class="content-card">
+                    <dt>Play station 5</dt>
+                    <dd class="price">$400.<small>99</small></dd>
                     <button id="buy-card" class="btn buy">Comprar</button>
                 </article>
 
             </div>
 
+            <div class="card">
+
+                <article class="img-card">
+                    <img src="./img/ips2-removebg-preview.png" alt="">
+                </article>
+
+                <article class="content-card">
+                    <dt>monitor ips</dt>
+                    <dd class="price">$300.<small>99</small></dd>
+                    <button id="buy-card" class="btn buy">Comprar</button>
+                </article>
+
+            </div>
             
         </section>
 
@@ -184,74 +210,91 @@
 
                 <article class="content-rel">
                     <section class="header-fav">
-                        <h1>Sony play station 5</h1>
+                        <h1 class="ps5">Sony play station 5</h1>
                         <h3>Gaming console</h3>
+                        <img id="ps5" src="" alt="">
                     </section>
 
                     <section class="text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aspernatur eos consequuntur suscipit aliquam sunt cupiditate? Ratione cumque quam obcaecati provident similique dolorum molestiae ea rerum mollitia? Nisi, eveniet accusantium.</p>
                     </section>
 
-                    <section class="footer-rel">
-                        <p class="price">$400.<small>99</small></p>
-                        <button class="btn buy">Comprar</button>
-                    </section>
                 </article>
             </div>
         </section>
 
-        <!-- Carrito -->
-
-        <section class="carrito-h1">
-            <h1>Carrito de compras</h1>
-        </section>
-
-        <section class="carrito">
-            
-            <article class="productos-car">
-                <h1>Productos</h1>
-                <ul id="elements">
-                </ul>
-            </article>
-            
-            <article class="precio">
-                <h1>Precio</h1>
-                <ul id="price">
-                </ul>
-            </article>
-            
-            <article class="ctd">
-                <h1>Cantidad</h1>
-
-                <div id="quantity">
-                    <button id="add"></button>
-                    <button id="remove"></button>
+     <!-- START SECTION SHOPPING CART -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">CARRITO</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
                 </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? START SHOPPING CART ITEMS -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? END SHOPPING CART ITEMS -->
 
-            </article>
-            
-            
-            <div class="contenedor-total">
-            <article class="subtotal">
-                <h1>subtotal</h1>
-                <ul id="subtotal"></ul>
-            </article>
-            
-            <div class="pay-sect">
-            <article class="car-total">
-                <h1>Total:</h1>
-                <ul id="mostrar">
-                </ul>
-            </article>
+            <!-- START TOTAL -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal"></p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-delay="2000">
+                            <div class="toast-header">
+                                <span></span>
+                                <strong class="mr-auto ml-1 text-secondary"></strong> 
+                            </div>
+                            <div class="toast-body text-white">
+                               
+                            </div>
+                        </div>
+                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                            data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END TOTAL -->
+
+            <!-- START MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel"></h5>
+                        </div>
+                        <div class="modal-body">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL COMPRA -->
+
+
         </div>
-        
-    </div>
-    
-</section>  
-<article class="car-btn">
-    <button id="go-pay">Ir a pagar</button>
-</article>
 
+    </section>
+    
         <!-- contact -->
         <section id="contacto" class="suscribe">
             <div class="search">
@@ -275,7 +318,7 @@
      
     
     </main>
-    
-    <script src="code.js"></script>
+    <script src="script.js"></script>
+   
   </body>
 </html>
