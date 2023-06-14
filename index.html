@@ -16,6 +16,9 @@
 
     <header>
       <section class="nav-img">
+          <a href="#text-center"><span class="material-symbols-outlined" id="toggleId">
+              shopping_cart
+              </span></a>
         <img src="img/logo.png" alt=""/>
       </section>
 
@@ -26,12 +29,11 @@
             <li><a href="#productos">productos</a></li>
             <li><a  href="#destacado">destacado</a></li>
             <li><a  href="#contacto">contacto</a></li>
-            <li><a href="/carrito.html"><span class="material-symbols-outlined">
-                shopping_cart
-                </span></a></li>
+            
           </ul>
         </nav>
       </section>
+
     </header>
 
 
@@ -39,16 +41,16 @@
         <section id="inicio" class="main-section">
             <article class="text-principal">
                 <h1>Where the ideas begin</h1>
-                <button class="btn">Productos</button>
+                <a href="#productos" class="btn">Productos</a>
             </article>
         </section>
         
                  
         <section class="menu">
-            <h1 class="title">Nuestros productos</h>
+            <h1 class="title" id="productos">Nuestros productos</h>
         </section>
 
-        <section id="productos" class="products">
+        <section  class="products">
 
             <div class="card">
 
@@ -196,8 +198,8 @@
         </section>
 
         <!-- Favorite -->
-        <section id="destacado" class='fav-tittle'>
-            <h1 class="title">producto destacado</h1>
+        <section class='fav-tittle'>
+            <h1 class="title" id="destacado">producto destacado</h1>
         </section>
 
         <section class="relevant" id="relevant">
@@ -223,78 +225,59 @@
             </div>
         </section>
 
-     <!-- START SECTION SHOPPING CART -->
-    <section class="shopping-cart">
-        <div class="container">
-            <h1 class="text-center">CARRITO</h1>
-            <hr>
-            <div class="row">
-                <div class="col-6">
-                    <div class="shopping-cart-header">
-                        <h6>Producto</h6>
-                    </div>
+
+        <section class="shopping-cart"> 
+            <div class="container">
+                <h1 class="text-center" id="text-center">CARRITO</h1>
+                <!-- ? START SHOPPING CART ITEMS -->
+                <div class="shopping-cart-items shoppingCartItemsContainer">
                 </div>
-                <div class="col-2">
-                    <div class="shopping-cart-header">
-                        <h6 class="text-truncate">Precio</h6>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="shopping-cart-header">
-                        <h6>Cantidad</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- ? START SHOPPING CART ITEMS -->
-            <div class="shopping-cart-items shoppingCartItemsContainer">
-            </div>
-            <!-- ? END SHOPPING CART ITEMS -->
-
-            <!-- START TOTAL -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="shopping-cart-total d-flex align-items-center">
-                        <p class="mb-0">Total</p>
-                        <p class="ml-4 mb-0 shoppingCartTotal"></p>
-                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
-                            data-delay="2000">
-                            <div class="toast-header">
-                                <span></span>
-                                <strong class="mr-auto ml-1 text-secondary"></strong> 
-                            </div>
-                            <div class="toast-body text-white">
-                               
-                            </div>
-                        </div>
-                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
-                            data-target="#comprarModal">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- END TOTAL -->
-
-            <!-- START MODAL COMPRA -->
-            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="comprarModalLabel"></h5>
-                        </div>
-                        <div class="modal-body">
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END MODAL COMPRA -->
-
-
-        </div>
-
-    </section>
+                <!-- ? END SHOPPING CART ITEMS -->
     
+                <!-- START TOTAL -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shopping-cart-total d-flex align-items-center">
+                            <p class="mb-0">Total</p>
+                            <p class="ml-4 mb-0 shoppingCartTotal">$0</p>
+                            <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                                data-delay="2000">
+                                <div class="toast-header">
+                                    <span></span>
+                                    <strong class="mr-auto ml-1 text-secondary"></strong> 
+                                </div>
+                                <div class="toast-body text-white">
+                                   
+                                </div>
+                            </div>
+                            <button class="btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                                data-target="#comprarModal">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- END TOTAL -->
+    
+                <!-- START MODAL COMPRA -->
+                <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="comprarModalLabel"></h5>
+                            </div>
+                            <div class="modal-body">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MODAL COMPRA -->
+            </div>
+        </section>   
+
+<!-- Fin barra carrito --> 
+      
         <!-- contact -->
         <section id="contacto" class="suscribe">
             <div class="search">
@@ -313,12 +296,7 @@
             <div><a href="#"><span class="fab fa-youtube"></span></a></div>
 
         </footer>
-
-
-     
-    
     </main>
     <script src="script.js"></script>
-   
   </body>
 </html>

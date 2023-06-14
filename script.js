@@ -1,6 +1,9 @@
 
 const addToShoppingCartButtons = document.querySelectorAll('.buy');
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
+const comprarButton = document.querySelector('.comprarButton');
+
+
 
 
 addToShoppingCartButtons.forEach((addTocartButton) => {
@@ -40,8 +43,8 @@ function addItemToShoppingCart(tittle,price,img){
      <div class="row shoppingCartItem">
      <div class="col-6">
          <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-             <img src=${img} class="shopping-cart-image" style="width: 100px; height: auto;">
-             <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${tittle}
+             <img src=${img} class="shopping-cart-image" style="width: 80px; height: auto;">
+             <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0" style="text-transform: uppercase;">${tittle}
              </h6>
          </div>
      </div>
@@ -54,8 +57,8 @@ function addItemToShoppingCart(tittle,price,img){
          <div
              class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
              <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-                 value="1">
-             <button class="btn btn-danger buttonDelete" type="button">X</button>
+                 value="1" style="width:30px;">
+             <button class="btn btn-danger buttonDelete" type="button" style="width:2vw; height:3vh; text-align:left; font-size:9px;">X</button>
          </div>
      </div>
  </div> `;
@@ -65,6 +68,8 @@ function addItemToShoppingCart(tittle,price,img){
 
  shoppingCartRow.querySelector('.buttonDelete').addEventListener('click',removeShoppingCartItem );
  shoppingCartRow.querySelector('.shoppingCartItemQuantity').addEventListener('change', quantityChanged);
+ comprarButton.addEventListener('click', () => {
+alert('Felicidades, su compra ha sido realizada'); location.reload()})
  updateShoppingCartTotal();
    }
 
@@ -101,3 +106,4 @@ function quantityChanged (event) {
     input.value < 0 ? (input.value = 1) : null;
     updateShoppingCartTotal()
 }
+
