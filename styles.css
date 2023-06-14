@@ -402,14 +402,15 @@ width: 100%;
 display: flex;
 flex-flow: column wrap;
 width: 100%;
-
-
 }
-.text-center {
-display: inherit;
+
+.shoppingTitle{
+display: flex;
+flex-flow: row wrap;
 justify-content: center;
-width: 100%;
+   
 }
+
 .row{
 display: flex;
 justify-content: space-around;
@@ -872,11 +873,13 @@ width: 100%;
 
 
 }
-.text-center {
-display: inherit;
-justify-content: center;
-width: 100%;
+.shoppingTitle{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+   
 }
+
 .row{
 display: flex;
 justify-content: space-around;
