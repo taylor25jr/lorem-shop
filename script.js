@@ -1,9 +1,20 @@
 
 const addToShoppingCartButtons = document.querySelectorAll('.buy');
 const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
+const d = document;
+
+d.addEventListener('click', e => {
+  if(e.target.matches('.panel-btn') || e.target.matches(`${'.panel-btn *'}`)){
+    d.querySelector('.panel').classList.toggle('is-active');
+    d.querySelector('.panel-btn').classList.toggle('is-active');
+}});
 
 const comprarButton = document.querySelector('.comprarButton');
-comprarButton.addEventListener('click', comprarButtonClicked);
+comprarButton.addEventListener('click', () => {
+    comprarButtonClicked();
+    d.querySelector('.panel').classList.remove('is-active');
+    
+});
 
 addToShoppingCartButtons.forEach((addTocartButton) => {
     addTocartButton.addEventListener('click', addToCartClicked)
@@ -61,7 +72,7 @@ function addItemToShoppingCart(tittle, price, img) {
      <div class="col-4">
          <div class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
              <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number" value="1" style='width:30px;'>
-             <button class="btn btn-danger buttonDelete" type="button" style="width:2vw; height:3vh; text-align:left; font-size:9px;">X</button>
+             <button class="btn btn-danger buttonDelete" type="button" style="width:31px; height:32px; text-align:center; font-size:9px;">X</button>
          </div>
      </div>
  </div> `;

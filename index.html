@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taylor's shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css" />
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
@@ -15,12 +16,17 @@
 
 
     <header>
-      <section class="nav-img">
-          <a href="#text-center"><span class="material-symbols-outlined" id="toggleId">
-              shopping_cart
-              </span></a>
+     <section class="nav-img">
+        <button class= "panel-btn hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="material-symbols-outlined" id="toggleId">
+                    shopping_cart
+                    </span>
+            </span>
+          </button>
         <img src="img/logo.png" alt=""/>
-      </section>
+      </section> 
+
 
       <section class="nav-enlaces">
         <nav>
@@ -225,7 +231,9 @@
             </div>
         </section>
 
+        
 
+        <aside class="panel">
         <section class="shopping-cart"> 
             <div class="container">
                 <article class="shoppingTitle">
@@ -280,7 +288,7 @@
                 <!-- END MODAL COMPRA -->
             </div>
         </section>   
-
+    </aside>
 <!-- Fin barra carrito --> 
       
         <!-- contact -->
